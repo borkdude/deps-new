@@ -102,6 +102,22 @@ with a simple `exec` function (you can invoke via `clojure -X scratch/exec`) and
 simple `-main` function (you can invoke via `clojure -M -m scratch`). This is intended
 to be a minimal "playground" to get started with `deps.edn` and the CLI.
 
+If you want the `scratch.clj` file to have a different name, you can override the
+default with `:scratch`:
+
+```bash
+clojure -Tnew scratch :name play :scratch ground
+```
+
+The created file will be `src/ground.clj` in the `play` folder. `:scratch` can be
+a path:
+
+```bash
+clojure -Tnew scratch :name play :scratch play/ground
+```
+
+The created file will be `src/play/ground.clj` in the `play` folder.
+
 ## Create a Fully-Fleshed `pom.xml`
 
 ```bash
